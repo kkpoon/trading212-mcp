@@ -59,6 +59,7 @@ Run with HTTP transport:
 docker run -p 8000:8000 \
   -e T212_API_KEY=your_key \
   -e T212_API_SECRET=your_secret \
+  -e MCP_HOST=0.0.0.0 \
   trading212-mcp --transport http
 ```
 
