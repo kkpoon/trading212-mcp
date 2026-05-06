@@ -36,6 +36,33 @@ An MCP server implementation for the [Trading 212 Public API](https://docs.tradi
 - `T212_API_SECRET`: Your Trading 212 API secret.
 - `T212_USE_LIVE`: Set to `True` for live trading, `False` (default) for demo/paper trading.
 
+## Docker
+
+Build the image:
+
+```bash
+docker build -t trading212-mcp .
+```
+
+Run with stdio transport (default):
+
+```bash
+docker run -i \
+  -e T212_API_KEY=your_key \
+  -e T212_API_SECRET=your_secret \
+  trading212-mcp
+```
+
+Run with HTTP transport:
+
+```bash
+docker run -p 8000:8000 \
+  -e T212_API_KEY=your_key \
+  -e T212_API_SECRET=your_secret \
+  -e MCP_HOST=0.0.0.0 \
+  trading212-mcp --transport http
+```
+
 ## Agent Settings
 
 ### Gemini
