@@ -16,4 +16,4 @@ ENV MCP_HOST=0.0.0.0
 ENV MCP_PORT=8000
 
 ENTRYPOINT ["uv", "run", "python", "main.py"]
-CMD ["--transport", "http"]
+CMD ["--transport", "stdio"]
